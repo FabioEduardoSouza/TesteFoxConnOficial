@@ -1,0 +1,257 @@
+object f_ingrediente_cad: Tf_ingrediente_cad
+  Left = 398
+  Top = 231
+  Width = 489
+  Height = 464
+  BorderIcons = [biSystemMenu]
+  Caption = 'Cadastro de ingredientes'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 14
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 473
+    Height = 83
+    Align = alTop
+    Color = clSkyBlue
+    Ctl3D = False
+    ParentCtl3D = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 23
+      Top = 8
+      Width = 10
+      Height = 14
+      Caption = 'ID'
+      Color = clSkyBlue
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 92
+      Top = 8
+      Width = 64
+      Height = 14
+      Caption = 'Ingrediente'
+      Color = clSkyBlue
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 376
+      Top = 8
+      Width = 28
+      Height = 14
+      Caption = 'Valor'
+      Color = clSkyBlue
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object id: TEdit
+      Left = 22
+      Top = 23
+      Width = 66
+      Height = 20
+      Ctl3D = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentCtl3D = False
+      ParentFont = False
+      TabOrder = 0
+      OnEnter = idEnter
+      OnExit = idExit
+    end
+    object nome: TDBEdit
+      Left = 91
+      Top = 23
+      Width = 282
+      Height = 20
+      DataField = 'NOME'
+      DataSource = Dm.source_ingrediente
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+    end
+    object b_finalizar: TBitBtn
+      Left = 376
+      Top = 51
+      Width = 70
+      Height = 24
+      Caption = '&Finalizar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 6
+      OnClick = b_finalizarClick
+    end
+    object b_gravar: TBitBtn
+      Left = 302
+      Top = 51
+      Width = 70
+      Height = 24
+      Caption = '&Gravar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      OnClick = b_gravarClick
+    end
+    object valor: TDBEdit
+      Left = 376
+      Top = 23
+      Width = 70
+      Height = 19
+      AutoSize = False
+      DataField = 'VALOR'
+      DataSource = Dm.source_ingrediente
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+    end
+    object b_excluir: TBitBtn
+      Left = 229
+      Top = 51
+      Width = 70
+      Height = 24
+      Caption = '&Excluir'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+      OnClick = b_excluirClick
+    end
+    object b_limpar: TBitBtn
+      Left = 156
+      Top = 51
+      Width = 70
+      Height = 24
+      Caption = '&Limpar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 5
+      OnClick = b_limparClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 384
+    Width = 473
+    Height = 41
+    Align = alBottom
+    AutoSize = True
+    Color = clSkyBlue
+    Ctl3D = False
+    ParentCtl3D = False
+    TabOrder = 1
+  end
+  object grid_itens: TDBGrid
+    Left = 0
+    Top = 83
+    Width = 473
+    Height = 301
+    Align = alClient
+    DataSource = Dm.source_ingrediente
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Font.Style = []
+    Options = [dgTitles, dgColLines, dgRowLines]
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'PK_INGREDIENTE'
+        Title.Alignment = taRightJustify
+        Title.Caption = 'ID'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clNavy
+        Title.Font.Height = -11
+        Title.Font.Name = 'Arial'
+        Title.Font.Style = []
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOME'
+        Title.Caption = 'Ingrediente'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clNavy
+        Title.Font.Height = -11
+        Title.Font.Name = 'Arial'
+        Title.Font.Style = []
+        Width = 300
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'VALOR'
+        Title.Alignment = taRightJustify
+        Title.Caption = 'Valor '
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clNavy
+        Title.Font.Height = -11
+        Title.Font.Name = 'Arial'
+        Title.Font.Style = []
+        Width = 100
+        Visible = True
+      end>
+  end
+end
