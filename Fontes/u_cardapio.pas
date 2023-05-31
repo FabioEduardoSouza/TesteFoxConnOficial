@@ -1,3 +1,4 @@
+{novo}
 unit u_cardapio;
 
 interface
